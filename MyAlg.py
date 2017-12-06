@@ -174,7 +174,8 @@ for i in range(15):
 
 items = []
 for ii in range(len(max_a.organs)):
-	items.append(ii)
+	if max_a.organs[ii] == 1:
+		items.append(ii)
 
 import requests as re
 import json
@@ -186,7 +187,7 @@ url = 'https://cit-home1.herokuapp.com/api/ga_homework'
 data = {}
 data["2"] = {"value" :int(max_a.value), "weight": int(max_a.weight), "volume": int(max_a.capacity), "items": items}
 data["1"] = LibAlg.getRes()
-
+print(data)
 
 r = re.post(url, data=json.dumps(data), headers=headers)
 print(r)
