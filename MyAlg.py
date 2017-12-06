@@ -174,7 +174,8 @@ for i in range(15):
 
 items = []
 for ii in range(len(max_a.organs)):
-	items.append(ii)
+	if max_a.organs[ii] == 1:
+		items.append(ii)
 
 import requests as re
 import json
